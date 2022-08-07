@@ -12,7 +12,7 @@ export async function GET() {
               'access-control-allow-origin': '*'
             },
             body: {
-              pages
+              ...pages
             }
           };
     }
