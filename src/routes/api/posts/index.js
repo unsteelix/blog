@@ -1,18 +1,18 @@
 import db from '$lib/db'
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function GET({ params }) {
+export async function GET() {
 
-    const post = await db.data.posts[params.id];
+    const posts = await db.data.posts
 
-    if (post) {
+    if (posts) {
         return {
             status: 200,
             headers: {
               'access-control-allow-origin': '*'
             },
             body: {
-              ...post
+              ...posts
             }
           };
     }

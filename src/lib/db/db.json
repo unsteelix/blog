@@ -1,10 +1,18 @@
 {
   "pages": {
     "n": {
-      "ds": "sadsd"
+      "ds": "sadsd",
+      "id": "n",
+      "path": "er",
+      "title": "gffgg",
+      "img": "qqqqqqqqqqq"
     },
     "n6": {
-      "sdf": "df"
+      "sdf": "df",
+      "id": "n6",
+      "img": "undefinedsfd",
+      "title": "rtre",
+      "path": "rere"
     }
   },
   "posts": {
