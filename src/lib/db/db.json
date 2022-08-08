@@ -1,23 +1,42 @@
 {
-  "pages": {
-    "n": {
-      "ds": "sadsd",
-      "id": "n",
-      "path": "er",
+  "pages": [
+    {
+      "id": "hgghjghj",
+      "path": "ervnvgnvgnv",
       "title": "gffgg",
       "img": "qqqqqqqqqqq"
     },
-    "n6": {
-      "sdf": "df",
-      "id": "n6",
-      "img": "undefinedsfd",
-      "title": "rtre",
-      "path": "rere"
+    {
+      "id": "fdgfdg",
+      "path": "er",
+      "title": "gffgg",
+      "img": "qqqqqqqqqqqhhghjghj"
+    },
+    {
+      "id": "new-id",
+      "path": "some-path",
+      "title": "some-title",
+      "img": "some-imgghfghf"
+    },
+    {
+      "id": "new-id",
+      "path": "some-path",
+      "title": "some-titlefdsfsdf",
+      "img": "some-img"
     }
-  },
-  "posts": {
-    "s": {
-      "ds": "sadsd"
+  ],
+  "posts": [
+    {
+      "id": "hgjghj",
+      "text": "sadsadsad"
+    },
+    {
+      "id": "cvbcvbcv",
+      "text": "sadsadsad"
+    },
+    {
+      "id": "jghjghj",
+      "text": "sadsadsad"
     }
-  }
+  ]
 }

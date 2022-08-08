@@ -21,9 +21,10 @@ export async function POST({ request, params }) {
         };
     }
 
+    const pages = await db.data.pages;
     // old
     // если старых данных нет, то просто создаем новые
-    const old = await db.data.pages[id]
+    const old = pages.find(page => page.id === id);
 
     const updated = {
         ...old,
@@ -31,10 +32,23 @@ export async function POST({ request, params }) {
     }
 
     // сохраняем в БД
-    db.data.pages[id] = updated
+    /**
+     * @type {any[]}
+     */
+    const newArr = []
+    pages.forEach(page => {
+        if(page.id === id){
+            newArr.push(updated)
+        } else {
+            newArr.push(page)
+        }
+    });
+    
+
+    db.data.pages = newArr
     await db.write()
 
-    const fromDB = db.data.pages[id]
+    const fromDB = await db.data.pages.find(page => page.id === id);
 
     if (updated) {
         return {
@@ -42,11 +56,7 @@ export async function POST({ request, params }) {
             headers: {
               'access-control-allow-origin': '*'
             },
-            body: {
-                [id]: {
-                    ...fromDB
-                }
-            }
+            body: fromDB
           };
     }
 

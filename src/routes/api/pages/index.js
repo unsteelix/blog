@@ -11,9 +11,7 @@ export async function GET() {
             headers: {
               'access-control-allow-origin': '*'
             },
-            body: {
-              ...pages
-            }
+            body: pages
           };
     }
 

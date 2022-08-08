@@ -1,26 +1,30 @@
 <script>
     import { onMount } from 'svelte'
 
+    let isLoaded = false
+
     /**
     * @type {Array<any>}
     */
-    let pages
+    let pages = []
 
-    const onSaveBtnClick = async (rowIndex, pageId) => {
-        const page = pages[rowIndex]
-
-        console.log('save', page)
-
-        const res = await fetch(`/api/page/update/${pageId}`, {
+    const onSaveBtnClick = async () => {
+        isLoaded = false
+        pages = await fetch(`/api/page/update`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(page) 
+            body: JSON.stringify(pages) 
             
         }).then(res => res.json())
+        isLoaded = true
+    }
 
-        console.log(res)
+    const onDelBtnClick = (rowIndex) => {
+        pages.splice(rowIndex, 1)
+        console.log(rowIndex)
+        pages = pages
     }
 
     const onInputChange = (rowIndex, input, value) => {
@@ -29,31 +33,30 @@
 
         //console.log(pages)
     }
+
+    const onAddBtnClick = () => {
+        const newPage = {
+            id: 'new-id',
+            path: 'some-path',
+            title: 'some-title',
+            img: 'some-img'
+        }
+        pages.push(newPage)
+        pages = pages
+        console.log(pages)
+    }
     
     onMount(async () => {
-        const pagesMap = await fetch('/api/pages')
+        pages = await fetch('/api/pages')
                         .then(res => res.json())
-
-        pages = []
-
-        for(let pageId in pagesMap){
-            const page = {
-                id: pageId,
-                ...pagesMap[pageId]
-            }
-            pages.push(page)
-        }
-
-        console.log(pages)
-
+        isLoaded = true
     })
 </script>
 
-<div>
-    {#if pages}
+<div class="wrap">
+    {#if isLoaded}
         {#each pages as page, index}
-            <div>
-                <div>{page.id}</div>
+            <div class="onePage">
                 <div>
                     <input type="text" value={page.path} on:change={(e) => onInputChange(index, 'path', e.target?.value)} />
                 </div>
@@ -63,13 +66,35 @@
                 <div>
                     <input type="text" value={page.img} on:change={(e) => onInputChange(index, 'img', e.target?.value)} />
                 </div>
-                <div on:click={() => onSaveBtnClick(index, page.id)}>
-                    save
+                <div on:click={() => onDelBtnClick(index)}>
+                    del
                 </div>
             </div>
         {/each}
+        <div on:click={() => onAddBtnClick()}>
+            add
+        </div>
+        <div on:click={() => onSaveBtnClick()}>
+            save
+        </div>
     {:else}
         Loading...
     {/if}
-    dofpsdf
 </div>
+
+<style>
+    .wrap {
+        border: 1px solid grey;
+    }
+
+    .onePage {
+        border-bottom: 2px solid cornflowerblue;
+        margin: 0.3rem 0.3rem 0.7rem 0.3rem;
+        /* background-color: cornflowerblue; */
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>

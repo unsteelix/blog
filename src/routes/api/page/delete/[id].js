@@ -11,11 +11,22 @@ export async function GET({ params }) {
         };
     }
 
+    /**
+     * @type {any[]}
+     */
+    const newArr = [] 
+    db.data.pages.forEach((/** @type {{ id: string; }} */ el) => {
+        if(el.id !== id){
+            newArr.push(el)
+        }
+    });
+
     // сохраняем в БД
-    db.data.pages[id] = undefined
+    db.data.pages = newArr
     await db.write()
 
-    const fromDB = db.data.pages[id]
+    // проверяем, удален ли элемент
+    const fromDB = await db.data.pages.find(page => page.id === id);
 
     if (!fromDB) {
         return {

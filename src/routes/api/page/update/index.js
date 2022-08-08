@@ -22,21 +22,19 @@ export async function POST({ request }) {
             body: 'не удалось достать данные из БД'
         };
     }
+    
+    db.data.pages = data
+    await db.write()
 
-    const updated = {
-        ...pages,
-        ...data
-    }
+    const fromDB = await db.data.pages
 
-    if (updated) {
+    if (fromDB) {
         return {
             status: 200,
             headers: {
               'access-control-allow-origin': '*'
             },
-            body: {
-              ...updated
-            }
+            body: fromDB
           };
     }
 
