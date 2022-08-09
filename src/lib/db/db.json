@@ -1,42 +1,55 @@
 {
   "pages": [
     {
-      "id": "hgghjghj",
-      "path": "ervnvgnvgnv",
-      "title": "gffgg",
-      "img": "qqqqqqqqqqq"
-    },
-    {
       "id": "fdgfdg",
       "path": "er",
       "title": "gffgg",
-      "img": "qqqqqqqqqqqhhghjghj"
+      "img": "qqqqqqqqqqqhhghjghj",
+      "postId": "shshsg"
     },
     {
       "id": "new-id",
-      "path": "some-path",
-      "title": "some-title",
-      "img": "some-imgghfghf"
-    },
-    {
-      "id": "new-id",
-      "path": "some-path",
+      "path": "some-pathdas",
       "title": "some-titlefdsfsdf",
-      "img": "some-img"
+      "img": "some-img",
+      "postId": "dhdfhd"
+    },
+    {
+      "id": "new-id",
+      "path": "/best/11",
+      "title": "fghgffg",
+      "img": "retgrtet",
+      "postId": "fvbvbghfgh"
+    },
+    {
+      "id": "new-id",
+      "path": "some-pathew",
+      "title": "some-titlefgd",
+      "img": "some-img",
+      "postId": "post-id"
     }
   ],
   "posts": [
     {
       "id": "hgjghj",
-      "text": "sadsadsad"
+      "text": "sadsadsad",
+      "title": "some-ttitle",
+      "date": "2018",
+      "img": "img3"
     },
     {
       "id": "cvbcvbcv",
-      "text": "sadsadsad"
+      "text": "sadsadsad",
+      "title": "some-ttitledsf",
+      "date": "2017",
+      "img": "img32"
     },
     {
       "id": "jghjghj",
-      "text": "sadsadsad"
+      "text": "sadsadsad",
+      "title": "some-ttitledsf",
+      "date": "2020",
+      "img": "img3e"
     }
   ]
 }

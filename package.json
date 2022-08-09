@@ -19,6 +19,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"lowdb": "^3.0.0"
+		"lowdb": "^3.0.0",
+		"sass": "^1.54.3",
+		"scss": "^0.2.4",
+		"svelte-preprocess": "^4.10.7"
 	}
 }

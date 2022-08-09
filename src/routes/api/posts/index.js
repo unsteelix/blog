@@ -3,7 +3,7 @@ import db from '$lib/db'
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function GET() {
 
-    const posts = await db.data.posts
+    const { posts } = await db.data;
 
     if (posts) {
         return {
@@ -11,9 +11,7 @@ export async function GET() {
             headers: {
               'access-control-allow-origin': '*'
             },
-            body: {
-              ...posts
-            }
+            body: posts
           };
     }
 

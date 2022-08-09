@@ -4,5 +4,18 @@
 
 </script>
 
-<PagesEdit />
-<PostsEdit />
+<div class="wrap">
+    <PagesEdit />
+    <PostsEdit />
+</div>
+
+<style lang="scss">
+    .wrap{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        padding: 1rem;
+    }
+
+</style>
