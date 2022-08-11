@@ -32,21 +32,82 @@
   "posts": [
     {
       "id": "hgjghj",
-      "text": "sadsadsad",
+      "blocks": [
+        {
+          "id": "sdfsdf1660216689962",
+          "type": "text",
+          "value": "dadaf"
+        },
+        {
+          "id": "sdfsdf1660216797995",
+          "type": "text",
+          "value": "45645g"
+        },
+        {
+          "id": "sdfsdf1660218242090",
+          "type": "text",
+          "value": "zvzv"
+        },
+        {
+          "id": "sdfsdf1660216690401",
+          "type": "text",
+          "value": "fgdhdfg"
+        },
+        {
+          "id": "sdfsdf1660216729139",
+          "type": "text",
+          "value": "wewergw"
+        },
+        {
+          "id": "sdfsdf1660216690627",
+          "type": "text",
+          "value": "qwerwr"
+        },
+        {
+          "id": "sdfsdf1660216690206",
+          "type": "text",
+          "value": "nmbbn,"
+        },
+        {
+          "id": "sdfsdf1660216778310",
+          "type": "text",
+          "value": "jhgjdg"
+        },
+        {
+          "id": "sdfsdf1660216700854",
+          "type": "text",
+          "value": "hgkffghk"
+        },
+        {
+          "id": "sdfsdf1660216689550",
+          "type": "text",
+          "value": "wergwerg"
+        },
+        {
+          "id": "sdfsdf1660218314955",
+          "type": "text",
+          "value": "afdasd"
+        },
+        {
+          "id": "sdfsdf1660218316074",
+          "type": "text",
+          "value": "afdasd"
+        }
+      ],
       "title": "some-ttitle",
       "date": "2018",
       "img": "img3"
     },
     {
       "id": "cvbcvbcv",
-      "text": "sadsadsad",
+      "blocks": [],
       "title": "some-ttitledsf",
       "date": "2017",
       "img": "img32"
     },
     {
       "id": "jghjghj",
-      "text": "sadsadsad",
+      "blocks": [],
       "title": "some-ttitledsf",
       "date": "2020",
       "img": "img3e"

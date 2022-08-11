@@ -55,6 +55,9 @@
     {#if isLoaded}
         {#each posts as post, index}
             <div class="onePost">
+                <div class="link">
+                    <a href={`/admin/post/${post.id}`}>edit</a>
+                </div>
                 <div class="title">
                     <input type="text" value={post.title} on:change={(e) => onInputChange(index, 'title', e.target?.value)} />
                 </div>
