@@ -41,4 +41,10 @@
         border-bottom: 1px solid gray;
     }
 
+    footer {
+        border-top: 1px solid gainsboro;
+        padding: 1rem;
+        text-align: center;
+    }
+
 </style>

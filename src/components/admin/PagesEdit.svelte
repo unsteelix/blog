@@ -1,5 +1,7 @@
 <script>
     import { onMount } from 'svelte'
+    import { customAlphabet } from 'nanoid'
+    import FileUpload from 'sveltefileuploadcomponent';
 
     let isLoaded = false
 
@@ -32,18 +34,45 @@
         pages[rowIndex][input] = value
     }
 
+    const nanoid = customAlphabet('1234567890abcdef', 10)
+
     const onAddBtnClick = () => {
         const newPage = {
-            id: 'new-id',
-            path: 'some-path',
-            title: 'some-title',
-            img: 'some-img',
-            postId: 'post-id'
+            id: nanoid(),
+            path: '/some/new/path',
+            title: 'some title',
+            img: 'some img',
+            postId: ''
         }
         pages.push(newPage)
         pages = pages
     }
     
+    let uploadedImg
+
+    const onFileChange = (file) => {
+        const { files } = file.detail
+        const formData = new FormData();
+
+        formData.append('file', files);
+
+        const upload = fetch('http://localhost:7400/upload', {
+            method: 'POST',
+            body: formData
+        }).then((res) => res.json()).then((res) => {
+            res.forEach(el => {
+                console.log(el.data.id)
+                uploadedImg = el.data.id
+                setTimeout(() => {
+                    uploadedImg = null
+                }, 5000)
+            })
+        })
+        .catch((err) => {
+            console.error(err);
+        });
+    }
+
     onMount(async () => {
         pages = await fetch('/api/pages')
                         .then(res => res.json())
@@ -68,7 +97,7 @@
                     <input type="text" value={page.postId} on:change={(e) => onInputChange(index, 'postId', e.target?.value)} />
                 </div>
                 <div on:click={() => onDelBtnClick(index)} class="del">
-                    del
+                    -
                 </div>
             </div>
         {/each}
@@ -79,6 +108,12 @@
             <div on:click={() => onSaveBtnClick()} class="save">
                 save
             </div>
+            <div class="uploadPhoto">
+                <FileUpload multiple={false} on:input={onFileChange}>
+                    +
+                </FileUpload>
+            </div>
+            {#if uploadedImg}{uploadedImg}{/if}
         </div>
     {:else}
         Loading...
@@ -119,8 +154,9 @@
 
             .del {
                 cursor: pointer;
-                width: 25px;
+                width: 20px;
                 height: 100%;
+                text-align: center;
 
                 &:hover{
                     background-color: cornflowerblue;
@@ -137,6 +173,16 @@
                 width: 100%;
                 text-align: center;
 
+                &:hover{
+                    background-color: cornflowerblue;
+                    color: whitesmoke;
+                }
+            }
+            .uploadPhoto {
+                width: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 &:hover{
                     background-color: cornflowerblue;
                     color: whitesmoke;

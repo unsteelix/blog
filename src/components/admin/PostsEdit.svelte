@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte'
+    import { customAlphabet  } from 'nanoid'
 
     let isLoaded = false
 
@@ -32,13 +33,16 @@
         posts[rowIndex][input] = value
     }
 
+    const nanoid = customAlphabet('1234567890abcdef', 10)
+
     const onAddBtnClick = () => {
+        console.log(nanoid())
         const newPost = {
-            id: 'new-id',
-            title: 'some-title',
+            id: nanoid(),
+            title: 'some-post-title',
             date: 'some-date',
             img: 'some-img',
-            text: 'some-text'
+            blocks: []
         }
         posts.push(newPost)
         posts = posts
@@ -56,7 +60,10 @@
         {#each posts as post, index}
             <div class="onePost">
                 <div class="link">
-                    <a href={`/admin/post/${post.id}`}>edit</a>
+                    <a href={`/admin/post/${post.id}`}>E</a>
+                </div>
+                <div class="id">
+                    {post.id}
                 </div>
                 <div class="title">
                     <input type="text" value={post.title} on:change={(e) => onInputChange(index, 'title', e.target?.value)} />
@@ -68,7 +75,7 @@
                     <input type="text" value={post.img} on:change={(e) => onInputChange(index, 'img', e.target?.value)} />
                 </div>
                 <div on:click={() => onDelBtnClick(index)} class="del">
-                    del
+                    -
                 </div>
             </div>
         {/each}
@@ -93,12 +100,14 @@
         .onePost {
             border-bottom: 2px solid cornflowerblue;
 
-
-            
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+
+            .id {
+                width: 90px;
+            }
 
             input {
                 padding: 0.4rem;
@@ -113,14 +122,30 @@
                 }
             }
 
+            .link {
+                width: 20px;
+                text-align: center;
+                a {
+                    text-decoration: none;
+                    color: cornflowerblue;
+                    &:hover {
+                        color: whitesmoke;
+                    }
+                }
+                &:hover {
+                    background-color: cornflowerblue;
+                }
+            }
+
             .img {
                 width: 60px;
             }
 
             .del {
                 cursor: pointer;
-                width: 25px;
+                width: 20px;
                 height: 100%;
+                text-align: center;
 
                 &:hover{
                     background-color: cornflowerblue;

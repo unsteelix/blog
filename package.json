@@ -20,9 +20,13 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@tiptap/core": "^2.0.0-beta.182",
+		"@tiptap/starter-kit": "^2.0.0-beta.191",
 		"lowdb": "^3.0.0",
+		"nanoid": "^4.0.0",
 		"sass": "^1.54.3",
 		"scss": "^0.2.4",
-		"svelte-preprocess": "^4.10.7"
+		"svelte-preprocess": "^4.10.7",
+		"sveltefileuploadcomponent": "^0.1.0"
 	}
 }
