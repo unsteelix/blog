@@ -4,7 +4,9 @@
     <a href="/admin">Admin</a>
 </nav>
   
-<slot></slot>
+<div class="wrap">
+    <slot></slot>
+</div>
 
 <footer>
     made by unsteelix
@@ -19,32 +21,39 @@
         font-family: 'Inter', sans-serif;
     }
 
+    :global(a) {
+        color: unset;
+        text-decoration: none;
+    }
+
     :global(body) {
 		margin: 0;
         padding: 0;
         box-sizing: border-box;
         width: 100%;
         height: 100%;
-
-        a {
-            color: unset;
-            text-decoration: unset;
-
-            &:hover {
-                color: gray;
-            }
-        }
     }
 
     nav {
         padding: 0.4rem;
         border-bottom: 1px solid gray;
+        // position: fixed;
+        top: 0px;
     }
 
     footer {
         border-top: 1px solid gainsboro;
         padding: 1rem;
         text-align: center;
+    }
+
+    .wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
     }
 
 </style>

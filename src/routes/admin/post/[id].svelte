@@ -8,6 +8,7 @@
     import Tiptap from '$lib/tiptap/index.svelte'
     import { customAlphabet } from 'nanoid'
     import FileUpload from 'sveltefileuploadcomponent';
+    import Img from '$components/admin/images/index.svelte';
 
     const { id } = $page.params;
 
@@ -21,7 +22,33 @@
     */
     let items = []
 
-    const types = ['text', 'img', 'img-h1']
+    const types = [
+        {
+            id: 'text',
+            title: 'Text'
+        },
+        {
+            id: 'img-wide',
+            title: 'Wide'
+        },
+        {
+            id: 'img-same-width-top',
+            title: 'Line-1'
+        },
+        {
+            id: 'img-same-width-mid',
+            title: 'Line-2'
+        },
+        {
+            id: 'img-same-width-bottom',
+            title: 'Line-3'
+        },
+        {
+            id: 'img-same-height',
+            title: 'Line-H'
+        },
+    ]
+
     let mode = {} // карта состояния блоков: preview/edit
     const flipDurationMs = 300;
     const handleDndConsider = (e) => {
@@ -58,17 +85,15 @@
             
         }).then(res => res.json())
 
-        console.log(post)
         mode = {}
         post = updatedPost
         items = post.blocks
         isLoaded = true
     }
 
-    const onTypeClick = (itemId, type) => {
-        console.log(itemId, type)
+    const onTypeClick = (itemId, typeId) => {
         const item = items.find(item => item.id === itemId)
-        item.type = type
+        item.type = typeId
         items = items
     }
 
@@ -109,7 +134,7 @@
             const item = items.find(item => item.id === itemId)
 
             res.forEach(el => {
-                item.value += `<br>${el.data.id}`
+                item.value += `<p>${el.data.id}</p>`
             })
             items = items
             mode[itemId] = 'preview'
@@ -122,8 +147,6 @@
     onMount(async () => {
         post = await fetch(`/api/post/${id}`)
                         .then(res => res.json())
-
-        console.log(post)
 
         items = post.blocks
         isLoaded = true
@@ -149,7 +172,7 @@
                     <div class="types">
                         <div class={`oneType ${(!mode[item.id] || (mode[item.id] === 'preview')) ? 'selected' : ''}`} on:click={() => onModeClick(item.id)}>P</div>
                         {#each types as type}
-                            <div class={`oneType ${type === item.type ? 'selected' : ''}`} on:click={() => onTypeClick(item.id, type)}>{type}</div>
+                            <div class={`oneType ${type.id === item.type ? 'selected' : ''}`} on:click={() => onTypeClick(item.id, type.id)}>{type.title}</div>
                         {/each}
                         <div class="uploadPhoto">
                             <FileUpload multiple={true} on:input={(file) => onFileChange(item.id, file)}>
@@ -168,7 +191,11 @@
                             <Tiptap content={item.value} onUpdateCallback={(html) => onTextFieldChange(item.id, html)}/>
                         {/if}
                     {:else}
-                        {@html item.value}
+                        {#if item.type === 'text'}
+                            {@html item.value}
+                        {:else}
+                            <Img type={item.type} data={item.value} />
+                        {/if}
                     {/if}
                 </div>
             </div>
@@ -195,6 +222,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        width: 100%;
 
         .blocks {
             display: flex;

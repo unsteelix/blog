@@ -36,7 +36,6 @@
     const nanoid = customAlphabet('1234567890abcdef', 10)
 
     const onAddBtnClick = () => {
-        console.log(nanoid())
         const newPost = {
             id: nanoid(),
             title: 'some-post-title',

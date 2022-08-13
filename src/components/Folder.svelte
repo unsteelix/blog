@@ -53,8 +53,8 @@
 {#each filteredPages as page, index}
     <div class="page" >
         <a href={`${page.path}`}>
-            <img src={`//localhost:7400/i/${page.img}`} alt={page.title} />
-            {page.title}
+            <img src={`//localhost:7400/i/${page.img}?w=240&h=240`} alt={page.title} />
+            <div class="title">{page.title}</div>
         </a>
     </div>
 {/each}
@@ -64,14 +64,38 @@
 <style lang="scss">
     .pages {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         flex-wrap: wrap;
+        width: 100%;
+        max-width: 1000px;
     
         .page {
             width: 240px;
             height: 240px;
-            border: 1px solid gainsboro;
             margin: 2rem;
+            position: relative;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: whitesmoke;
+                position: relative;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .title {
+                position: absolute;
+                bottom: 0%;
+                padding: 7px 10px;
+                width: 100%;
+                background-color: white;
+                color: black;
+            }
         }
     }
 </style>

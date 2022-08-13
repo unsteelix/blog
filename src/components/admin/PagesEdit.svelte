@@ -61,7 +61,6 @@
             body: formData
         }).then((res) => res.json()).then((res) => {
             res.forEach(el => {
-                console.log(el.data.id)
                 uploadedImg = el.data.id
                 setTimeout(() => {
                     uploadedImg = null

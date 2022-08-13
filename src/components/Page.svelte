@@ -21,3 +21,7 @@
 {:else}
     <Folder pages={pages} />
 {/if}
+
+<style lang="scss">
+
+</style>
