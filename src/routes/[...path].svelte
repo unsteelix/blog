@@ -1,49 +1,11 @@
 <script>
     import { page } from '$app/stores';
     import { onMount, beforeUpdate, afterUpdate, tick } from 'svelte';
-    import Post from '$components/Post.svelte';
-    import Folder from '$components/Folder.svelte';
+    import Page from '$components/Page.svelte';
 
-
-    let pages = []
-
+    $: path = `/${$page.params.path}`;
     let isLoaded = false
-    let isPost
-    let postId
-
-    $: {
-        let path = `/${$page.params.path}`;
-
-        console.log('2222222', path)
-        if(isLoaded){
-            let p2age
-            pages.forEach(p => {
-                if(p.path === path){
-                    p2age = p
-                }
-            })
-            if(p2age){
-                if(p2age.postId){
-                    postId = p2age.postId
-                    isPost = true
-                }
-            } else {
-                if(path !== '/'){
-                    alert('page not found')
-                }
-            }
-        }
-        isPost = isPost
-        postId = postId
-        path = path
-        console.log(path)
-    } 
-
-
-    afterUpdate(async () => {
-        console.log('ÇHAIKIN')
-        pages = pages
-    })
+    let pages = []
 
     onMount(async () => {
         pages = await fetch('/api/pages')
@@ -53,11 +15,7 @@
 </script>
 
 {#if isLoaded}
-    {#if isPost}P==
-        <Post id={postId} />
-    {:else}F==
-        <Folder pages={pages} />
-    {/if}
+    <Page {pages} {path} />
 {:else}
-    Loading...
+    Pages is Loading...
 {/if}

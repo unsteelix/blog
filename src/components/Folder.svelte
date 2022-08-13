@@ -4,7 +4,7 @@
 
     export let pages
 
-    const path = `/${$page.params.path}`;
+    $: path = `/${$page.params.path}`;
 
     let isLoaded = false
     let post
@@ -33,11 +33,10 @@
                 }
             })
         }
-        console.log(res)
         return res
     }
 
-    const filteredPages = filterPagesByPath(pages, path)
+    $: filteredPages = filterPagesByPath(pages, path)
 
     const onPageChange = (path) => {
         window.location.replace(path)
@@ -52,7 +51,7 @@
 
 <div class="pages">
 {#each filteredPages as page, index}
-    <div class="page" on:click={() => onPageChange(page.path)}>
+    <div class="page" >
         <a href={`${page.path}`}>
             <img src={`//localhost:7400/i/${page.img}`} alt={page.title} />
             {page.title}

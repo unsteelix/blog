@@ -1,196 +1,66 @@
 {
   "pages": [
     {
-      "id": "new-id",
-      "path": "/best",
-      "title": "some-titlefdsfsdf",
-      "img": "0c89a5a02948b9",
-      "postId": ""
-    },
-    {
-      "id": "new-id",
-      "path": "/best/11",
-      "title": "fghgffg",
-      "img": "0c89a5a02948b9",
-      "postId": "jghjghj"
-    },
-    {
-      "id": "new-id",
-      "path": "/best/12",
-      "title": "some-titlefgd",
-      "img": "0c89a5a02948b9",
-      "postId": "post-id"
-    },
-    {
-      "id": "",
-      "path": "/paris",
-      "title": "some-title",
-      "img": "0c89a5a02948b9",
-      "postId": ""
-    },
-    {
-      "id": "580d9868c1",
-      "path": "/paris/day1",
-      "title": "some title",
-      "img": "0c89a5a02948b9",
-      "postId": "postId"
-    },
-    {
-      "id": "01e7bad5ee",
-      "path": "/paris/day2",
-      "title": "some title",
-      "img": "0c89a5a02948b9",
-      "postId": "postId"
-    },
-    {
-      "id": "d8b645731f",
-      "path": "/turk1",
-      "title": "some title",
-      "img": "0c89a5a02948b9",
-      "postId": "postId"
-    },
-    {
-      "id": "f6eff0c363",
-      "path": "/turk2",
-      "title": "some title",
-      "img": "0c89a5a02948b9",
-      "postId": "hgjghj"
-    },
-    {
-      "id": "adb1d70d4a",
+      "id": "e999b99a9e",
       "path": "/other",
       "title": "some title",
-      "img": "0c89a5a02948b9",
-      "postId": "jghjghj"
+      "img": "25af13de1d5f33",
+      "postId": "9e122eaefd"
+    },
+    {
+      "id": "89ff710f0f",
+      "path": "/paris",
+      "title": "some title",
+      "img": "3ff6a9cc8dbf5e",
+      "postId": ""
+    },
+    {
+      "id": "d530e2540e",
+      "path": "/paris/1",
+      "title": "some title",
+      "img": "25af13de1d5f33",
+      "postId": "376e8103d8"
+    },
+    {
+      "id": "995b238805",
+      "path": "/paris/2",
+      "title": "some title",
+      "img": "25af13de1d5f33",
+      "postId": "e1b4ab663b"
     }
   ],
   "posts": [
     {
-      "id": "hgjghj",
-      "blocks": [
-        {
-          "id": "sdfsdf1660284491324",
-          "type": "text",
-          "value": "<h1>новый пост UPDATED</h1>"
-        },
-        {
-          "id": "sdfsdf1660284594363",
-          "type": "text",
-          "value": "<p>обновленный полл <strong><em>авпавп</em></strong></p>"
-        },
-        {
-          "id": "sdfsdf1660282342496",
-          "type": "text",
-          "value": "<p>новый тестовый блок бла fdgfdgfdgfdg3333</p><h2>заголовок updated</h2><p>пруыф что качество</p><ul><li><p>уцк</p></li><li><p>32куку</p></li><li><p>цауцауца</p></li></ul><p>авпавпававып</p><p>ыыпыпа</p>"
-        },
-        {
-          "id": "sdfsdf1660216690627",
-          "type": "text",
-          "value": "<p>qwerwr <em>fgfhgfh </em>gfhgfhfgh</p>"
-        },
-        {
-          "id": "sdfsdf1660216690206",
-          "type": "text",
-          "value": "nmbbn,"
-        },
-        {
-          "id": "sdfsdf1660216778310",
-          "type": "text",
-          "value": "jhgjdg"
-        },
-        {
-          "id": "sdfsdf1660216700854",
-          "type": "text",
-          "value": "hgkffghk"
-        },
-        {
-          "id": "sdfsdf1660216689550",
-          "type": "text",
-          "value": "wergwerg"
-        },
-        {
-          "id": "sdfsdf1660218314955",
-          "type": "text",
-          "value": "afdasd"
-        },
-        {
-          "id": "sdfsdf1660218316074",
-          "type": "text",
-          "value": "afdasd"
-        },
-        {
-          "id": "sdfsdf1660284165467",
-          "type": "text",
-          "value": "<p>one more time</p>"
-        },
-        {
-          "id": "sdfsdf1660282562646",
-          "type": "text",
-          "value": "<h1>мой последний блок</h1><p>какой-то текст на последок</p>"
-        },
-        {
-          "id": "sdfsdf1660284659332",
-          "type": "text",
-          "value": "<pre><code>dsfdsfdsfafadf\n\nad</code></pre><h2>adfadfafadf</h2><p>asdfafads</p>"
-        },
-        {
-          "id": "sdfsdf1660284693078",
-          "type": "text",
-          "value": "<p><em>sddfdsfadf</em></p><p>asdfasddsaf</p><p>adfadsfadsfaf</p>"
-        },
-        {
-          "id": "sdfsdf1660287980464",
-          "type": "text",
-          "value": "<p><strong>THE END</strong></p>"
-        }
-      ],
-      "title": "some-ttitle",
-      "date": "2018",
-      "img": "img3"
-    },
-    {
-      "id": "cvbcvbcv",
-      "blocks": [
-        {
-          "id": "sdfsdf1660284821354",
-          "type": "text",
-          "value": "<p>anotehr post</p>"
-        }
-      ],
-      "title": "some-ttitledsf",
-      "date": "2017",
-      "img": "img32"
-    },
-    {
-      "id": "jghjghj",
-      "blocks": [
-        {
-          "id": "e0174891ef",
-          "type": "text",
-          "value": "<p>first text</p>"
-        }
-      ],
-      "title": "some-ttitledsf",
-      "date": "2020",
-      "img": "img3e"
-    },
-    {
-      "id": "d8d7a174ff",
+      "id": "9e122eaefd",
       "title": "some-post-title",
       "date": "some-date",
       "img": "some-img",
       "blocks": [
         {
-          "id": "58ecb4c8c3",
-          "type": "img-h1",
-          "value": "<p>что-то новое</p>"
+          "id": "95355dcd07",
+          "type": "text",
+          "value": "<p>Новый пост</p>"
         },
         {
-          "id": "2b8fca4fca",
+          "id": "c297d525b9",
           "type": "text",
-          "value": "<p>еще один блок</p>"
+          "value": "<h1><strong>A7M3 </strong>- лучшая камера</h1><p>пока не вышли полнокадровые от никон</p>"
         }
       ]
+    },
+    {
+      "id": "376e8103d8",
+      "title": "some-post-title",
+      "date": "some-date",
+      "img": "some-img",
+      "blocks": []
+    },
+    {
+      "id": "e1b4ab663b",
+      "title": "some-post-title",
+      "date": "some-date",
+      "img": "some-img",
+      "blocks": []
     }
   ]
 }
