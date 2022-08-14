@@ -1,3 +1,15 @@
+<script>
+    import { onMount } from 'svelte';
+
+    let w
+    let h
+
+    onMount(() => {
+        w = document.documentElement.clientWidth
+        h = document.documentElement.clientHeight
+    });
+</script>
+
 <nav>
     <a href="/">Home</a>
     <a href="/about">About</a>
@@ -9,7 +21,7 @@
 </div>
 
 <footer>
-    made by unsteelix
+    {w} * {h} made by unsteelix
 </footer>
 
 <style lang="scss">

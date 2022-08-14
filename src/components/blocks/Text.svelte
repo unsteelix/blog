@@ -9,6 +9,6 @@
 <style lang="scss">
     .wrap {
         width: 500px;
-        margin: 2rem 0;
+        padding: 4rem 0;
     }
 </style>

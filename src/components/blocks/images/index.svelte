@@ -4,9 +4,14 @@
     import SameWidthMid from './SameWidthMid.svelte'
     import SameWidthBottom from './SameWidthBottom.svelte'
     import SameHeight from './SameHeight.svelte'
+    import { onMount } from 'svelte';
+
+    let viewportWidth
+    let viewportHeight
 
     export let type
     export let data
+
 
     const parseData = (data) => {
         const list = data.split('<p>')
@@ -23,13 +28,18 @@
         return cleanList
     }
 
+    onMount(() => {
+        viewportWidth = document.documentElement.clientWidth
+        viewportHeight = document.documentElement.clientHeight
+    });
+
     const imgs = parseData(data)
 </script>
 
 {#if type === 'img-wide'}
     <Wide {imgs} />
 {:else if type === 'img-same-width-top'}
-    <SameWidthTop {imgs} />
+    <SameWidthTop {imgs} {viewportWidth} {viewportHeight} />
 {:else if type === 'img-same-width-mid'}
     <SameWidthMid {imgs} />
 {:else if type === 'img-same-width-bottom'}

@@ -63,19 +63,29 @@
           "value": "<h1>Новый пост</h1><p>с каким-то подзаголовком</p><p>и чем-то <em>еще</em></p>"
         },
         {
+          "id": "7ced2db69f",
+          "type": "img-same-width-top",
+          "value": "<p>88fabda7d6793c</p>"
+        },
+        {
           "id": "c297d525b9",
           "type": "text",
           "value": "<h1><strong>A7M3 </strong>- лучшая камера</h1><p>пока не вышли полнокадровые от никон</p>"
         },
         {
-          "id": "7c16191e07",
-          "type": "text",
-          "value": "<p>какой-то еще текст про камеры</p><p>думаю взять какой-нибудь <strong>компакт</strong>, либо <strong>micro4/3</strong></p><p>из топовых моделей есть <strong>Fuji x100v</strong></p>"
+          "id": "cfde30eaf5",
+          "type": "img-wide",
+          "value": "<p>8560a40d77b59b</p>"
         },
         {
           "id": "6cff6ca899",
           "type": "img-wide",
-          "value": "<p>e6d9dc17640050</p><p>75ff3137e68c90</p><p>f9781959b66b16</p><p>3b1d169c74f045</p><p>e04bd2f525e148</p>"
+          "value": "<p>e6d9dc17640050</p><p></p><p>31c4569ae48791</p><p>666bc30373f5f9</p><p>c83f1ad7bfbc3a</p>"
+        },
+        {
+          "id": "7c16191e07",
+          "type": "text",
+          "value": "<p>какой-то еще текст про камеры</p><p>думаю взять какой-нибудь <strong>компакт</strong>, либо <strong>micro4/3</strong></p><p>из топовых моделей есть <strong>Fuji x100v</strong></p>"
         },
         {
           "id": "23619e7a6b",
@@ -84,7 +94,7 @@
         },
         {
           "id": "275982129a",
-          "type": "img-same-height",
+          "type": "img-same-width-top",
           "value": "<p></p><p>d5eb6086c52982</p><p>7268169cd7e6df</p>"
         },
         {
@@ -94,7 +104,7 @@
         },
         {
           "id": "779a9983b8",
-          "type": "img-wide",
+          "type": "img-same-width-top",
           "value": "<p>5cd89f477a4d47</p>"
         },
         {
@@ -104,8 +114,8 @@
         },
         {
           "id": "834d1d5be6",
-          "type": "img-wide",
-          "value": "<p>e5d1e1fd7204d5</p>"
+          "type": "img-same-width-top",
+          "value": "<p>e5d1e1fd7204d5</p><p>e5d1e1fd7204d5</p>"
         },
         {
           "id": "8a20cdb9a7",
@@ -115,12 +125,22 @@
         {
           "id": "c5b6ed673a",
           "type": "img-same-width-top",
-          "value": "<p>7a62c57005b6c4</p>"
+          "value": "<p>7a62c57005b6c4</p><p>7a62c57005b6c4</p>"
         },
         {
           "id": "008e63a745",
           "type": "text",
           "value": "<p>на сегодня всё</p>"
+        },
+        {
+          "id": "1675426d32",
+          "type": "img-wide",
+          "value": "<p>e5d1e1fd7204d5</p>"
+        },
+        {
+          "id": "61a1248afe",
+          "type": "img-wide",
+          "value": "<p>d5eb6086c52982</p>"
         }
       ]
     },
