@@ -3,6 +3,7 @@
     import { customAlphabet  } from 'nanoid'
 
     let isLoaded = false
+    let token
 
     /**
     * @type {Array<any>}
@@ -48,6 +49,7 @@
     }
     
     onMount(async () => {
+        token = localStorage.getItem('token') 
         posts = await fetch('/api/posts')
                         .then(res => res.json())
         isLoaded = true
@@ -59,7 +61,7 @@
         {#each posts as post, index}
             <div class="onePost">
                 <div class="link">
-                    <a href={`/admin/post/${post.id}`}>E</a>
+                    <a href={`/admin/${token}/post/${post.id}`}>E</a>
                 </div>
                 <div class="id">
                     {post.id}
