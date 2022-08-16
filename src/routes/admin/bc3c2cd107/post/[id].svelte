@@ -32,20 +32,8 @@
             title: 'Wide'
         },
         {
-            id: 'img-same-width-top',
-            title: 'Line-1'
-        },
-        {
-            id: 'img-same-width-mid',
-            title: 'Line-2'
-        },
-        {
-            id: 'img-same-width-bottom',
-            title: 'Line-3'
-        },
-        {
-            id: 'img-same-height',
-            title: 'Line-H'
+            id: 'img-padding',
+            title: 'Pad'
         },
     ]
 

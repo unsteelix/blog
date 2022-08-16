@@ -7,7 +7,13 @@
     let isLoaded = false
     let post
 
+    let viewportWidth
+    let viewportHeight
+
     onMount(async () => {
+        viewportWidth = document.documentElement.clientWidth
+        viewportHeight = document.documentElement.clientHeight
+
         post = await fetch(`/api/post/${id}`)
                         .then(res => res.json())
         isLoaded = true
@@ -16,13 +22,20 @@
 
 <div class="wrap">
 {#if isLoaded}
-    {#each post.blocks as block, index}
-        {#if block.type === 'text'}
-            <Text value={block.value} />
-        {:else}
-            <Img type={block.type} data={block.value} />
-        {/if}
-    {/each}
+    <div class="cover">
+        <div class="title">{post.title}</div>
+        <div class="date">{post.date}</div>
+        <img src={`//localhost:7400/i/${post.img}?w=${viewportWidth}&h=${viewportHeight}&resize=cover`} alt={post.img} />
+    </div>
+    <div class="blocks">
+        {#each post.blocks as block, index}
+            {#if block.type === 'text'}
+                <Text value={block.value} />
+            {:else}
+                <Img type={block.type} data={block.value} />
+            {/if}
+        {/each}
+    </div>
 {:else}
     Loading...
 {/if}
@@ -35,21 +48,47 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        
-        .oneBlock {
 
-            &.text {
-                width: 100%;
-                max-width: 500px;
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+
+            .title {
+                z-index: 1;
+                color: white;
+                font-size: 2rem;
                 margin: 1rem;
             }
 
-            &.img {
-                width: 100%;
-                height: auto;
-                min-height: 100vh;
+            .date {
+                z-index: 1;
+                color: white;
+                font-size: 1rem;
             }
+
+            img {
+                position: fixed;
+                z-index: -1;
+            }
+        }
+
+        .blocks {
+            z-index: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: white;
+            padding: 8rem 0;
             
+            .oneBlock {
+
+            }
         }
     }
 </style>

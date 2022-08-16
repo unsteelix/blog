@@ -4,13 +4,17 @@
 
     // расчет ширины одной картинки
     const koefMargin = imgs.length === 1 ? 0.9 : 0.8
-    let width = parseInt((100 / imgs.length) * koefMargin)
+    let widthProcent = parseInt((100 / imgs.length) * koefMargin) // %
+    console.log(viewportWidth, imgs.length)
+
+    let width = parseInt(viewportWidth / imgs.length)
+
 </script>
 
 <div class="wrap">
 {#each imgs as img}
-    <div class="oneImg" style="--width: {width}%;" >
-        <img src={`//localhost:7400/i/${img}?w=1400`} alt={img}  />
+    <div class="oneImg" style="--width: {widthProcent}%;" >
+        <img src={`//localhost:7400/i/${img}?w=${width}`} alt={img}  />
     </div>
 {/each}
 </div>

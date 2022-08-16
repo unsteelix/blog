@@ -1,9 +1,13 @@
 <script>
     export let imgs
+
+    export let viewportWidth
+    export let viewportHeight
+
 </script>
 
 {#each imgs as img}
-    <img src={`//localhost:7400/i/${img}?w=1400`} alt={img} />
+    <img src={`//localhost:7400/i/${img}?w=${viewportWidth}`} alt={img} />
 {/each}
 
 <style lang="scss">

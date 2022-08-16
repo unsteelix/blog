@@ -25,12 +25,6 @@
 
 {#if type === 'img-wide'}
     <Wide {imgs} />
-{:else if type === 'img-same-width-top'}
-    <Line {imgs} />
-{:else if type === 'img-same-width-mid'}
-    <Line {imgs} />
-{:else if type === 'img-same-width-bottom'}
-    <Line {imgs} />
-{:else if type === 'img-same-height'}
+{:else if type === 'img-padding'}
     <Line {imgs} />
 {/if}

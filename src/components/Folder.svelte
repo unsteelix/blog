@@ -68,6 +68,7 @@
         flex-wrap: wrap;
         width: 100%;
         max-width: 1000px;
+        padding: 4rem 0;
     
         .page {
             width: 240px;

@@ -1,13 +1,12 @@
 <script>
     import Wide from './Wide.svelte'
-    import SameWidthTop from './SameWidthTop.svelte'
-    import SameWidthMid from './SameWidthMid.svelte'
-    import SameWidthBottom from './SameWidthBottom.svelte'
-    import SameHeight from './SameHeight.svelte'
+    import Padding from './Padding.svelte'
     import { onMount } from 'svelte';
 
     let viewportWidth
     let viewportHeight
+
+    let isReady = false
 
     export let type
     export let data
@@ -31,19 +30,16 @@
     onMount(() => {
         viewportWidth = document.documentElement.clientWidth
         viewportHeight = document.documentElement.clientHeight
+        isReady = true
     });
 
     const imgs = parseData(data)
 </script>
 
-{#if type === 'img-wide'}
-    <Wide {imgs} />
-{:else if type === 'img-same-width-top'}
-    <SameWidthTop {imgs} {viewportWidth} {viewportHeight} />
-{:else if type === 'img-same-width-mid'}
-    <SameWidthMid {imgs} />
-{:else if type === 'img-same-width-bottom'}
-    <SameWidthBottom {imgs} />
-{:else if type === 'img-same-height'}
-    <SameHeight {imgs} />
+{#if isReady}
+    {#if type === 'img-wide'}
+        <Wide {imgs} {viewportWidth} {viewportHeight} />
+    {:else if type === 'img-padding'}
+        <Padding {imgs} {viewportWidth} {viewportHeight} />
+    {/if}
 {/if}

@@ -3,7 +3,7 @@
     {
       "id": "e999b99a9e",
       "path": "/other",
-      "title": "some title",
+      "title": "long road",
       "img": "3cffa176d1aede",
       "postId": "9e122eaefd"
     },
@@ -48,14 +48,21 @@
       "title": "some title 333",
       "img": "a3c5d73448c882",
       "postId": ""
+    },
+    {
+      "id": "c3cadeb023",
+      "path": "/begining",
+      "title": "В начале было...",
+      "img": "2c8fc8b1f9ee6d",
+      "postId": "29a500ca5b"
     }
   ],
   "posts": [
     {
       "id": "9e122eaefd",
-      "title": "some-post-title",
-      "date": "some-date",
-      "img": "some-img",
+      "title": "long road",
+      "date": "2018-11-10",
+      "img": "6313ad55b7b4f8",
       "blocks": [
         {
           "id": "95355dcd07",
@@ -64,7 +71,7 @@
         },
         {
           "id": "7ced2db69f",
-          "type": "img-same-width-top",
+          "type": "img-padding",
           "value": "<p>88fabda7d6793c</p>"
         },
         {
@@ -94,7 +101,7 @@
         },
         {
           "id": "275982129a",
-          "type": "img-same-width-top",
+          "type": "img-padding",
           "value": "<p></p><p>d5eb6086c52982</p><p>7268169cd7e6df</p>"
         },
         {
@@ -104,7 +111,7 @@
         },
         {
           "id": "779a9983b8",
-          "type": "img-same-width-top",
+          "type": "img-padding",
           "value": "<p>5cd89f477a4d47</p>"
         },
         {
@@ -114,8 +121,8 @@
         },
         {
           "id": "834d1d5be6",
-          "type": "img-same-width-top",
-          "value": "<p>e5d1e1fd7204d5</p><p>e5d1e1fd7204d5</p>"
+          "type": "img-wide",
+          "value": "<p></p><p>85c6781e4a72d2</p><p>72d96f2bd27569</p>"
         },
         {
           "id": "8a20cdb9a7",
@@ -124,8 +131,8 @@
         },
         {
           "id": "c5b6ed673a",
-          "type": "img-same-width-top",
-          "value": "<p>7a62c57005b6c4</p><p>7a62c57005b6c4</p>"
+          "type": "img-padding",
+          "value": "<p>7a62c57005b6c4</p><p>a3fff32cd9df2a</p>"
         },
         {
           "id": "008e63a745",
@@ -141,6 +148,11 @@
           "id": "61a1248afe",
           "type": "img-wide",
           "value": "<p>d5eb6086c52982</p>"
+        },
+        {
+          "id": "cd51d9e958",
+          "type": "text",
+          "value": "<p>Всем чао!!!</p>"
         }
       ]
     },
@@ -166,6 +178,49 @@
           "id": "58c0e0d1e9",
           "type": "img",
           "value": "<p>fdgfdg</p>"
+        }
+      ]
+    },
+    {
+      "id": "29a500ca5b",
+      "title": "какой-то тайтл",
+      "date": "2022-11-11",
+      "img": "2c8fc8b1f9ee6d",
+      "blocks": [
+        {
+          "id": "00966d35ae",
+          "type": "text",
+          "value": "<p>начну пожалуй с того, что опишу первые впечатления после покупки <strong>Fuji x100v</strong></p><p>в плане качества сборки - идеально, ничего не скрепит, люфтит и прочее</p><p>удобство хвата - среднее, не хватает места под мизинец и нету грипа</p>"
+        },
+        {
+          "id": "47e0b5e7d7",
+          "type": "img-wide",
+          "value": "<p>4aa0f15a085f66</p>"
+        },
+        {
+          "id": "3fd99f8f88",
+          "type": "text",
+          "value": "<p>Думал начать с чего-то интересного, но похоже начну с простых фото</p>"
+        },
+        {
+          "id": "ae141c0e2c",
+          "type": "img-wide",
+          "value": "<p>1308aa5c0d5156</p>"
+        },
+        {
+          "id": "a752ccf272",
+          "type": "text",
+          "value": "<p>красивая цапля, еле успел заснять</p>"
+        },
+        {
+          "id": "73c168a376",
+          "type": "img-wide",
+          "value": "<p>4167715a250c57</p>"
+        },
+        {
+          "id": "3f8b6f2295",
+          "type": "text",
+          "value": "<p>ночная люминисценсия на полях каких-то растений</p>"
         }
       ]
     }

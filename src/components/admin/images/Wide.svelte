@@ -4,7 +4,7 @@
 
 <div class="wrap">
 {#each imgs as img}
-    <img src={`//localhost:7400/i/${img}?w=400&h=240`} alt={img} class="oneImg" />
+    <img src={`//localhost:7400/i/${img}?w=767`} alt={img} class="oneImg" />
 {/each}
 </div>
 
@@ -15,8 +15,8 @@
         
 
         .oneImg {
-            margin: 0.2rem;
-            height: 300px;
+            max-height: 300px;
+            width: fit-content;
         }
     }
 </style>
