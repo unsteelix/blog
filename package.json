@@ -2,6 +2,7 @@
 	"name": "blog",
 	"version": "0.0.1",
 	"scripts": {
+		"start": "vite preview --host",
 		"dev": "vite dev",
 		"build": "vite build",
 		"package": "svelte-kit package",

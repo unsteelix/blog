@@ -1,0 +1,13 @@
+services:
+
+  blog:
+    build: 
+      context: .
+    ports:
+      - 7500:4173
+    volumes:
+      - blog_volume:/app/volume
+    restart: always
+
+volumes:
+  blog_volume:

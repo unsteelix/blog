@@ -3,7 +3,7 @@ import { Low, JSONFile } from 'lowdb'
 
 
 // Use JSON file for storage
-const file = join('src/lib/db', 'db.json')
+const file = join('src/../volume', 'db.json')
 const adapter = new JSONFile(file)
 const db = new Low(adapter)
 
