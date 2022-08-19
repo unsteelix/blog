@@ -6,7 +6,7 @@
     let viewportWidth
     let viewportHeight
 
-    let isReady = false
+    let isMounted = false
 
     export let type
     export let data
@@ -30,16 +30,16 @@
     onMount(() => {
         viewportWidth = document.documentElement.clientWidth
         viewportHeight = document.documentElement.clientHeight
-        isReady = true
+        isMounted = true
     });
 
     const imgs = parseData(data)
 </script>
 
-{#if isReady}
+{#if isMounted}
     {#if type === 'img-wide'}
         <Wide {imgs} {viewportWidth} {viewportHeight} />
     {:else if type === 'img-padding'}
-        <Padding {imgs} {viewportWidth} {viewportHeight} />
+        <Padding {imgs} {viewportWidth} {viewportHeight} class="oneImgBlock" />
     {/if}
 {/if}
