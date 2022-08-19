@@ -5,7 +5,6 @@
     // расчет ширины одной картинки
     const koefMargin = imgs.length === 1 ? 0.9 : 0.8
     let widthProcent = parseInt((100 / imgs.length) * koefMargin) // %
-    console.log(viewportWidth, imgs.length)
 
     let width = parseInt(viewportWidth / imgs.length)
 

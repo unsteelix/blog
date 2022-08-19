@@ -40,8 +40,8 @@
         const newPage = {
             id: nanoid(),
             path: '/some/new/path',
-            title: 'some title',
-            img: 'some img',
+            title: 'title',
+            img: 'img',
             postId: ''
         }
         pages.push(newPage)

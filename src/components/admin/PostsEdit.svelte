@@ -39,9 +39,9 @@
     const onAddBtnClick = () => {
         const newPost = {
             id: nanoid(),
-            title: 'some-post-title',
-            date: 'some-date',
-            img: 'some-img',
+            title: 'title',
+            date: 'date',
+            img: 'img',
             blocks: []
         }
         posts.push(newPost)

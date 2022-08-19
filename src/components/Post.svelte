@@ -60,7 +60,7 @@
             .title {
                 z-index: 1;
                 color: white;
-                font-size: 2rem;
+                font-size: 5rem;
                 margin: 1rem;
             }
 

@@ -63,9 +63,10 @@
 
 <style lang="scss">
     .pages {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        display: grid;
+        // grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+
         width: 100%;
         max-width: 1000px;
         padding: 4rem 0;
@@ -95,7 +96,7 @@
                 padding: 7px 10px;
                 width: 100%;
                 background-color: white;
-                color: black;
+                color: #464646;
             }
         }
     }
