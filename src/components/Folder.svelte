@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte'
     import { page } from '$app/stores';
+    import { picolaUrl } from '$src/lib/const'
 
     export let pages
 
@@ -53,7 +54,7 @@
 {#each filteredPages as page, index}
     <div class="page" >
         <a href={`${page.path}`}>
-            <img src={`//localhost:7400/i/${page.img}?w=240&h=240`} alt={page.title} />
+            <img src={`/${picolaUrl}/i/${page.img}?w=240&h=240`} alt={page.title} />
             <div class="title">{page.title}</div>
         </a>
     </div>

@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { customAlphabet } from 'nanoid'
+    import { picolaUrl } from '$src/lib/const'
 
     export let imgs
 
@@ -17,8 +18,8 @@
     onMount(() => {
         imgs.forEach(i => {
             map[i] = {
-                url: `//localhost:7400/i/${i}?w=${viewportWidth}`,
-                previewUrl: `//localhost:7400/i/${i}?w=200`,
+                url: `${picolaUrl}/i/${i}?w=${viewportWidth}`,
+                previewUrl: `${picolaUrl}/i/${i}?w=200`,
                 id: `${i}-${nanoid()}`,
                 isReady: false
             }
@@ -47,8 +48,6 @@
                     map[id].isReady = true
                     map = map
 
-                    // меняем фон контейнера
-                    lazyImg.style.background = 'deepskyblue'
                     // прекращаем наблюдение
                     observer.unobserve(lazyImg)
                 }

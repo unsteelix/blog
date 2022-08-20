@@ -6,6 +6,13 @@
       "title": "title",
       "img": "257f273b27ef5b",
       "postId": "b37f4903d0"
+    },
+    {
+      "id": "2ba58d50f3",
+      "path": "/new",
+      "title": "cupr",
+      "img": "48d0003f454de7",
+      "postId": "2763c96685"
     }
   ],
   "posts": [
@@ -59,6 +66,39 @@
           "id": "9df46ee4ca",
           "type": "img-padding",
           "value": "<p>2bfabb927bda5f</p><p>82cb2260f5b090</p>"
+        }
+      ]
+    },
+    {
+      "id": "2763c96685",
+      "title": "cupr",
+      "date": "2021-11-11",
+      "img": "48d0003f454de7",
+      "blocks": [
+        {
+          "id": "eefb86e6cb",
+          "type": "text",
+          "value": "<p>dsfdsf</p><p></p><p>как же хотелся нормальный новый смарт и что-то типа дейки или <strong>Fuji x100v</strong></p>"
+        },
+        {
+          "id": "39da63a34c",
+          "type": "img-wide",
+          "value": "<p>17c3740df6e1b1</p><p>ebea3f25e212e6</p>"
+        },
+        {
+          "id": "b3ef6283f5",
+          "type": "text",
+          "value": "<p>fghfghfgh</p>"
+        },
+        {
+          "id": "53f42393ab",
+          "type": "img-wide",
+          "value": "<p>34e051ab5340c5</p>"
+        },
+        {
+          "id": "fd8299f880",
+          "type": "text",
+          "value": "<p>gfhfghfghfgh</p>"
         }
       ]
     }

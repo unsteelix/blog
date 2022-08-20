@@ -1,10 +1,12 @@
 <script>
+    import { picolaUrl } from '$src/lib/const'
+
     export let imgs
 </script>
 
 <div class="wrap">
 {#each imgs as img}
-    <img src={`//localhost:7400/i/${img}?w=200&h=200`} alt={img} class="oneImg" />
+    <img src={`${picolaUrl}/i/${img}?w=200&h=200`} alt={img} class="oneImg" />
 {/each}
 </div>
 

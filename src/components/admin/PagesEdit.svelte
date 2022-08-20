@@ -2,6 +2,7 @@
     import { onMount } from 'svelte'
     import { customAlphabet } from 'nanoid'
     import FileUpload from 'sveltefileuploadcomponent';
+    import { picolaUrl } from '$src/lib/const'
 
     let isLoaded = false
 
@@ -56,7 +57,7 @@
 
         formData.append('file', files);
 
-        const upload = fetch('http://localhost:7400/upload', {
+        const upload = fetch(`${picolaUrl}/upload`, {
             method: 'POST',
             body: formData
         }).then((res) => res.json()).then((res) => {

@@ -2,7 +2,8 @@
     import { onMount } from 'svelte'
     import Text from '$components/blocks/Text.svelte'
     import Img from '$components/blocks/images/index.svelte'
-
+    import { picolaUrl } from '$src/lib/const'
+    
     export let id
     let isLoaded = false
     let post
@@ -25,7 +26,7 @@
     <div class="cover">
         <div class="title">{post.title}</div>
         <div class="date">{post.date}</div>
-        <img src={`//localhost:7400/i/${post.img}?w=${viewportWidth}&h=${viewportHeight}&resize=cover`} alt={post.img} />
+        <img src={`${picolaUrl}/i/${post.img}?w=${viewportWidth}&h=${viewportHeight}&resize=cover`} alt={post.img} />
     </div>
     <div class="blocks">
         {#each post.blocks as block, index}

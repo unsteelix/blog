@@ -9,6 +9,7 @@
     import { customAlphabet } from 'nanoid'
     import FileUpload from 'sveltefileuploadcomponent';
     import Img from '$components/admin/images/index.svelte';
+    import { picolaUrl } from '$src/lib/const'
 
     const { id } = $page.params;
 
@@ -115,7 +116,7 @@
             formData.append(`file_${i}`, el);
         });
 
-        const upload = fetch('http://localhost:7400/upload', {
+        const upload = fetch(`${picolaUrl}/upload`, {
             method: 'POST',
             body: formData
         }).then((res) => res.json()).then((res) => {
