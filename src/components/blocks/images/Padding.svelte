@@ -22,8 +22,8 @@
     onMount(() => {
         imgs.forEach(i => {
             map[i] = {
-                url: `${picolaUrl}/i/${i}?w=${width}`,
-                previewUrl: `${picolaUrl}/i/${i}?w=200`,
+                url: `${picolaUrl}/i/${i}?w=${width}&format=png&q=90`,
+                previewUrl: `${picolaUrl}/i/${i}?w=${width}&format=jpeg&q=50&blur=5`,
                 id: `${i}-${nanoid()}`,
                 isReady: false
             }

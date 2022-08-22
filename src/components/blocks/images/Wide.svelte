@@ -18,8 +18,8 @@
     onMount(() => {
         imgs.forEach(i => {
             map[i] = {
-                url: `${picolaUrl}/i/${i}?w=${viewportWidth}`,
-                previewUrl: `${picolaUrl}/i/${i}?w=200`,
+                url: `${picolaUrl}/i/${i}?w=${viewportWidth}&format=png&q=90`,
+                previewUrl: `${picolaUrl}/i/${i}?w=${viewportWidth}&format=jpeg&q=50&blur=5`,
                 id: `${i}-${nanoid()}`,
                 isReady: false
             }
@@ -31,7 +31,7 @@
             // родитель целевого элемента - область просмотра
             root: null,
             // без отступов
-            rootMargin: '20%',
+            rootMargin: '100%',
             // процент пересечения - половина изображения
             threshold: 0
         }

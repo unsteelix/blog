@@ -26,7 +26,7 @@
     <div class="cover">
         <div class="title">{post.title}</div>
         <div class="date">{post.date}</div>
-        <img src={`${picolaUrl}/i/${post.img}?w=${viewportWidth}&h=${viewportHeight}&resize=cover`} alt={post.img} />
+        <img src={`${picolaUrl}/i/${post.img}?w=${viewportWidth}&h=${viewportHeight}&resize=cover&format=png&q=90`} alt={post.img} />
     </div>
     <div class="blocks">
         {#each post.blocks as block, index}

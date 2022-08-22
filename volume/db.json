@@ -13,6 +13,13 @@
       "title": "cupr",
       "img": "48d0003f454de7",
       "postId": "2763c96685"
+    },
+    {
+      "id": "c094da6d30",
+      "path": "/s",
+      "title": "test",
+      "img": "5cd97ebbebda14",
+      "postId": "8b389f15b2"
     }
   ],
   "posts": [
@@ -99,6 +106,44 @@
           "id": "fd8299f880",
           "type": "text",
           "value": "<p>gfhfghfghfgh</p>"
+        }
+      ]
+    },
+    {
+      "id": "8b389f15b2",
+      "title": "test",
+      "date": "2022",
+      "img": "5cd97ebbebda14",
+      "blocks": [
+        {
+          "id": "25af204e56",
+          "type": "text",
+          "value": "<p>начну с этого</p>"
+        },
+        {
+          "id": "0dbb158c78",
+          "type": "img-wide",
+          "value": "<p>777608076a300d</p>"
+        },
+        {
+          "id": "de559f3c5c",
+          "type": "img-wide",
+          "value": "<p>77e55228832feb</p>"
+        },
+        {
+          "id": "4e62ba59e0",
+          "type": "text",
+          "value": "<p>в общем-то неплохой блог вышел</p><p>на самом деле даже отличный</p><p>особенно все что качается оптимизации картинок</p>"
+        },
+        {
+          "id": "ad687b8c8a",
+          "type": "img-wide",
+          "value": "<p>d14b78a571bd40</p><p>e9df5a9680c470</p><p>3ab6259a805c70</p><p>0591c3e7dc5de6</p><p>57ee00af59dcb2</p><p>ed08ad588050b1</p><p>bde8e34daf7b91</p>"
+        },
+        {
+          "id": "46658cb05b",
+          "type": "text",
+          "value": "<p>на сегодня все</p><p>с вами был - я</p><p>увидимся скоро</p>"
         }
       ]
     }
