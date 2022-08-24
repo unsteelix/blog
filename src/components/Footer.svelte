@@ -13,7 +13,7 @@
 <footer>
     <div class="resolution">
         <!-- <a href="/">Home</a>         -->
-        <!-- {w} * {h} -->
+        {w} * {h}
     </div>
     <div class="madeBy">
         made by unsteelix
