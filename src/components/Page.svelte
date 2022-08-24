@@ -30,7 +30,7 @@
 <svelte:head>
 {#if isLoaded}
     {#each posts as post, index}
-    <link rel="preload" as="image" href={`/${picolaUrl}/i/${post.img}?w=1920&h=1080&resize=cover&f=jpeg&q=90`}>
+    <link rel="prefetch" as="image" href={`/${picolaUrl}/i/${post.img}?w=1920&h=1080&resize=cover&f=jpeg&q=95`}>
     {/each}
 {/if}
 </svelte:head>

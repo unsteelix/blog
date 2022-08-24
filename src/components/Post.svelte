@@ -23,10 +23,10 @@
 
 <div class="wrap">
 {#if isLoaded}
-    <div class="cover">
+    <div class="cover" style={`background-image: url(${picolaUrl}/i/${post.img}?w=1920&h=1080&resize=cover&f=jpeg&q=90)`}>
         <div class="title">{post.title}</div>
         <div class="date">{post.date}</div>
-        <img src={`${picolaUrl}/i/${post.img}?w=1920&h=1080&resize=cover&f=jpeg&q=90`} alt={post.img} />
+        <!-- <img src={`${picolaUrl}/i/${post.img}?w=1920&h=1080&resize=cover&f=jpeg&q=90`} alt={post.img} /> -->
         <!-- <img src={`${picolaUrl}/i/${post.img}?w=${viewportWidth}&h=${viewportHeight}&resize=cover&f=jpeg&q=95`} alt={post.img} /> -->
     </div>
     <div class="blocks">
@@ -58,6 +58,10 @@
             align-items: center;
             width: 100%;
             height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
             .title {
                 z-index: 1;
@@ -76,6 +80,7 @@
                 position: fixed;
                 z-index: -1;
                 width: 100%;
+                height: 100%;
             }
         }
 
