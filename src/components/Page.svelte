@@ -19,7 +19,13 @@
 
     let isLoaded = false
     let posts = []
+    let viewportWidth
+    let viewportHeight
+    
     onMount(async () => {
+        viewportWidth = document.documentElement.clientWidth
+        viewportHeight = document.documentElement.clientHeight
+
         posts = await fetch(`/api/posts`)
                         .then(res => res.json())
         isLoaded = true
@@ -30,7 +36,7 @@
 <svelte:head>
 {#if isLoaded}
     {#each posts as post, index}
-    <link rel="prefetch" as="image" href={`/${picolaUrl}/i/${post.img}?w=1920&h=1080&resize=cover&f=jpeg&q=95`}>
+    <link rel="prefetch" as="image" href={`/${picolaUrl}/i/${post.img}?w=${viewportWidth}&h=${viewportHeight}&resize=cover&f=jpeg&q=95`}>
     {/each}
 {/if}
 </svelte:head>

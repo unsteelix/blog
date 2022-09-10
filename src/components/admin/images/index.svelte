@@ -1,6 +1,7 @@
 <script>
     import Wide from './Wide.svelte'
     import Line from './Line.svelte'
+    import Back from './Back.svelte'
 
     export let type
     export let data
@@ -27,4 +28,6 @@
     <Wide {imgs} />
 {:else if type === 'img-padding'}
     <Line {imgs} />
+{:else if type === 'img-background'}
+    <Back {imgs} />
 {/if}

@@ -36,6 +36,10 @@
             id: 'img-padding',
             title: 'Pad'
         },
+        {
+            id: 'img-background',
+            title: 'Back'
+        },
     ]
 
     let mode = {} // карта состояния блоков: preview/edit

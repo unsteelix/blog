@@ -54,7 +54,7 @@
 {#each filteredPages as page, index}
     <div class="page" >
         <a href={`${page.path}`}>
-            <img src={`/${picolaUrl}/i/${page.img}?w=240&h=240&f=jpeg&q=85`} alt={page.title} />
+            <img src={`/${picolaUrl}/i/${page.img}?w=300&h=300&resize=cover&f=jpeg&q=95`} alt={page.title} />
             <div class="title">{page.title}</div>
         </a>
     </div>
@@ -73,9 +73,9 @@
         padding: 4rem 0;
     
         .page {
-            width: 240px;
-            height: 240px;
-            margin: 2rem;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
             position: relative;
 
             a {

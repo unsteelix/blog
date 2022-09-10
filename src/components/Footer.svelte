@@ -33,6 +33,7 @@
         background-color: white;
 
         .resolution {
+            visibility: collapse;
             // color: white;
         }
 

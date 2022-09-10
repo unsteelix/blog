@@ -4,13 +4,9 @@
     import { picolaUrl } from '$src/lib/const'
 
     export let imgs
+
     export let viewportWidth
-
-    // расчет ширины одной картинки
-    const koefMargin = imgs.length === 1 ? 0.9 : 0.8
-    let widthProcent = parseInt((100 / imgs.length) * koefMargin) // %
-
-    let width = parseInt(viewportWidth / 100 * widthProcent)
+    export let viewportHeight
 
     let isMounted = false
 
@@ -22,8 +18,8 @@
     onMount(() => {
         imgs.forEach(i => {
             map[i] = {
-                url: `${picolaUrl}/i/${i}?w=${width}&f=jpeg&q=95`,
-                previewUrl: `${picolaUrl}/i/${i}?w=${width}&f=jpeg&q=50&blur=5`,
+                url: `${picolaUrl}/i/${i}?w=${viewportWidth}&h=${viewportHeight}&resize=cover&f=jpeg&q=95`,
+                previewUrl: `${picolaUrl}/i/${i}?w=${viewportWidth}&h=${viewportHeight}&resize=cover&f=jpeg&q=50&blur=5`,
                 id: `${i}-${nanoid()}`,
                 isReady: false
             }
@@ -35,7 +31,7 @@
             // родитель целевого элемента - область просмотра
             root: null,
             // без отступов
-            rootMargin: '20%',
+            rootMargin: '100%',
             // процент пересечения - половина изображения
             threshold: 0
         }
@@ -60,7 +56,7 @@
 
         // с помощью цикла следим за всеми img на странице
         setTimeout(() => {
-            const arr = document.getElementById(id)?.querySelectorAll('img')
+            const arr = document.getElementById(id)?.querySelectorAll('div')
             arr.forEach(i => {
                 observer.observe(i)
             })        
@@ -69,11 +65,9 @@
 </script>
 
 {#if isMounted}
-<div class="wrap" {id}>
+<div {id} class="wrap">
     {#each imgs as img}
-        <div class="oneImg" style="--width: {widthProcent}%;" >
-            <img src={map[img].isReady ? map[img].url : map[img].previewUrl} alt={img} id={map[img].id} />
-        </div>
+        <div class="background" style={`background-image: url(${map[img].isReady ? map[img].url : map[img].previewUrl})`} id={map[img].id}></div>
     {/each}
 </div>
 {/if}
@@ -81,27 +75,17 @@
 <style lang="scss">
     .wrap {
         width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        max-height: 100vh;
-        margin: 5rem 0;
+        height: 100%;
+        min-height: 100vh;
+        margin: 8rem 0;
+    }
 
-        .oneImg {
-            width: var(--width);
-            padding: 3rem 0;
-            height: 100%;
-            max-height: 100vh;
-            
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            img {
-                max-height: calc(100vh - 6rem);
-                max-width: 100%;   
-            }
-        }
+    .background {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 </style>

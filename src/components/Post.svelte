@@ -23,7 +23,7 @@
 
 <div class="wrap">
 {#if isLoaded}
-    <div class="cover" style={`background-image: url(${picolaUrl}/i/${post.img}?w=1920&h=1080&resize=cover&f=jpeg&q=95)`}>
+    <div class="cover" style={`background-image: url(${picolaUrl}/i/${post.img}?w=${viewportWidth}&h=${viewportHeight}&resize=cover&f=jpeg&q=95)`}>
         <div class="title">{post.title}</div>
         <div class="date">{post.date}</div>
         <!-- <img src={`${picolaUrl}/i/${post.img}?w=1920&h=1080&resize=cover&f=jpeg&q=90`} alt={post.img} /> -->
