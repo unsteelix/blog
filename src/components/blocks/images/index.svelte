@@ -29,8 +29,9 @@
     }
 
     onMount(() => {
-        viewportWidth = document.documentElement.clientWidth
-        viewportHeight = document.documentElement.clientHeight
+        const browserZoomLevel = Math.round(window.devicePixelRatio);
+        viewportWidth = document.documentElement.clientWidth * browserZoomLevel
+        viewportHeight = document.documentElement.clientHeight * browserZoomLevel
         isMounted = true
     });
 
