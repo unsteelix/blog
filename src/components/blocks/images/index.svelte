@@ -32,6 +32,13 @@
         const browserZoomLevel = Math.round(window.devicePixelRatio);
         viewportWidth = document.documentElement.clientWidth * browserZoomLevel
         viewportHeight = document.documentElement.clientHeight * browserZoomLevel
+
+        if(viewportWidth > 2560){
+            const k = viewportWidth / viewportHeight;
+            viewportWidth = 2560;
+            viewportHeight = Math.round(viewportWidth / k);
+        }
+
         isMounted = true
     });
 
