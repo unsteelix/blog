@@ -9,13 +9,19 @@
             isMobile = true
         }
     })
+
+    const onImgClick = () => {
+        isMobile = false
+    }
 </script>
 
 
 {#if isMobile}
     <div class="mobile">
         Ты что пытался смотреть фотографии с телефона?
-        <img src="facepalm.png" alt="facepalm" />
+        <div class="imgWrap" on:click={onImgClick} >
+            <img src="facepalm.png" alt="facepalm" />
+        </div>
         Такое нужно смотреть только с большого дисплея
     </div>
 {:else}
@@ -61,18 +67,23 @@
     .mobile {
         display: flex;
         flex-direction: column;
-        justify-content:space-around;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
         height: 100vh;
         font-size: 1.4rem;
-        padding: 5rem;
+        padding: 4rem;
         text-align: center;
         
-        img {
-            margin: 20%;
-            width: 50vw;
-            height: auto;
+        .imgWrap {
+            width: 90vw;
+            height: 40vh;
+
+            img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 
