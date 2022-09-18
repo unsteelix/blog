@@ -8,7 +8,9 @@
     import Tiptap from '$lib/tiptap/index.svelte'
     import { customAlphabet } from 'nanoid'
     import FileUpload from 'sveltefileuploadcomponent';
+    import FormData from 'form-data';
     import Img from '$components/admin/images/index.svelte';
+    import Video from '$components/admin/Video.svelte';
     import { picolaUrl } from '$src/lib/const'
 
     const { id } = $page.params;
@@ -39,6 +41,10 @@
         {
             id: 'img-background',
             title: 'Back'
+        },
+        {
+            id: 'video',
+            title: 'V'
         },
     ]
 
@@ -112,7 +118,7 @@
         }
     }
 
-    const onFileChange = (itemId, file) => {
+    const onFileImageChange = (itemId, file) => {
         const { files } = file.detail
         const formData = new FormData();
 
@@ -129,6 +135,28 @@
             res.forEach(el => {
                 item.value += `<p>${el.data.id}</p>`
             })
+            items = items
+            mode[itemId] = 'preview'
+        })
+        .catch((err) => {
+            console.error(err);
+        });
+    }
+
+    const onFileVideoChange = (itemId, file) => {
+        const { files } = file.detail
+
+        const formData = new FormData();
+        formData.append('file', files[0])
+
+        const upload = fetch(`/api/upload/video`, {
+            method: 'POST',
+            body: formData
+        }).then((res) => res.json()).then((res) => {
+            const item = items.find(item => item.id === itemId)
+
+            item.value = res.id
+            
             items = items
             mode[itemId] = 'preview'
         })
@@ -167,12 +195,19 @@
                         {#each types as type}
                             <div class={`oneType ${type.id === item.type ? 'selected' : ''}`} on:click={() => onTypeClick(item.id, type.id)}>{type.title}</div>
                         {/each}
+                    </div>
+                    <div class="serviceBtns">
                         <div class="uploadPhoto">
-                            <FileUpload multiple={true} on:input={(file) => onFileChange(item.id, file)}>
-                                +
+                            <FileUpload multiple={true} on:input={(file) => onFileImageChange(item.id, file)}>
+                                +I
                             </FileUpload>    
                         </div>
-                        <div class="oneType" on:click={() => onDelClick(item.id)}>-</div>
+                        <div class="uploadVideo">
+                            <FileUpload multiple={true} on:input={(file) => onFileVideoChange(item.id, file)}>
+                                +V
+                            </FileUpload>    
+                        </div>
+                        <div class="delBtn" on:click={() => onDelClick(item.id)}>-</div>
                     </div>
                 </div>
                 <div class="right">
@@ -186,6 +221,8 @@
                     {:else}
                         {#if item.type === 'text'}
                             {@html item.value}
+                        {:else if item.type === 'video'}
+                            <Video data={item.value} />
                         {:else}
                             <Img type={item.type} data={item.value} />
                         {/if}
@@ -240,8 +277,11 @@
                     border-left: 1px solid gainsboro;
                     border-top: 0px solid gainsboro;
                     cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
 
-                    .uploadPhoto {
+                    .uploadPhoto, .uploadVideo {
                         text-align: center;
                         border-bottom: 1px solid gainsboro;
                         width: 30px;
@@ -271,6 +311,32 @@
                             flex-direction: column;
                             justify-content: center;
                             align-items: center;
+                        }
+                    }
+
+                    .serviceBtns {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        background-color: #adffb0;
+                        
+                        .delBtn {
+                            width: 30px;
+                            height: 30px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: bold;
+                            background-color: #fff4f4;
+                        }
+
+                        div {
+                            border: none;
+                            border-top: 1px solid gainsboro;
+
+                            &:first-child {
+                                border-top: none;
+                            }
                         }
                     }
                 }

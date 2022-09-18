@@ -9,7 +9,7 @@
 <style lang="scss">
     .wrap {
         width: 100%;
-        max-width: 500px;
+        max-width: 720px;
         padding: 4rem 2rem;
         font-size: 1.2rem;
         line-height: 2rem;

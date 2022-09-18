@@ -2,6 +2,7 @@
     import { onMount } from 'svelte'
     import Text from '$components/blocks/Text.svelte'
     import Img from '$components/blocks/images/index.svelte'
+    import Video from '$components/blocks/Video.svelte'
     import { picolaUrl } from '$src/lib/const'
     
     export let id
@@ -33,6 +34,8 @@
         {#each post.blocks as block, index}
             {#if block.type === 'text'}
                 <Text value={block.value} />
+            {:else if block.type === 'video'}
+                <Video type={block.type} data={block.value} />
             {:else}
                 <Img type={block.type} data={block.value} />
             {/if}
