@@ -18,11 +18,13 @@ export async function POST({ request, params }) {
     }
 
     const nanoid = customAlphabet('1234567890abcdef', 10)
-    const videoId = nanoid()
+    const id = nanoid()
+    const ext = file.name.split('.')[1]
+    const newName = `${id}.${ext}`
 
     try {
         const folderPath = 'src/../volume/videos'
-        const filePath = join(folderPath, `${videoId}.mp4`)
+        const filePath = join(folderPath, newName)
 
         try {
             if (!fs.existsSync(folderPath)){
@@ -40,7 +42,7 @@ export async function POST({ request, params }) {
               'access-control-allow-origin': '*'
             },
             body: {
-                id: videoId
+                id: newName
             }
         };
 

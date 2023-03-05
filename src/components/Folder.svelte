@@ -64,6 +64,7 @@
 
 <style lang="scss">
     .pages {
+        --main-bg-color: width;
         display: grid;
         // grid-template-columns: repeat(6, 1fr);
         grid-template-columns: repeat(3, 1fr);
@@ -74,14 +75,13 @@
     
         .page {
             width: 100%;
-            height: 100%;
+            height: auto;
             padding: 2rem;
             position: relative;
 
             a {
                 display: block;
-                width: 100%;
-                height: 100%;
+
                 color: whitesmoke;
                 position: relative;
             }
